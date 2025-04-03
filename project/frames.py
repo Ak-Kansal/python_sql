@@ -1,0 +1,40 @@
+from tkinter import *
+from tkinter import ttk
+from PIL import Image,ImageTk
+top=Tk()
+top.geometry('1500x600')
+f1=Frame(top,bg='red',height=200,width=1500)
+f1.place(x=0,y=0)
+img=ImageTk.PhotoImage(Image.open(r"c:\Users\DELL\Desktop\Yoga.jpg"))
+L=Label(f1,image=img)
+L.pack()
+f2=Frame(top,bg='white',height=200,width=1500)
+f2.place(x=0,y=201)
+f3=Frame(top,bg='blue',height=200,width=1500)
+f3.place(x=0,y=401)
+k=['red','green','blue','yellow','pink','black','white','orange','purple','brown']
+cb=ttk.Combobox(f2,value=k)
+cb.place(x=300,y=100)
+cb.current(0)
+
+var1=StringVar()
+var2=StringVar()
+r1=Radiobutton(f3,text='male',value='male',variable=var1)
+r1.place(x=300,y=100)
+r2=Radiobutton(f3,text='female',value='female',variable=var1)
+r2.place(x=400,y=100)
+r3=Radiobutton(f3,text='other',value='other',variable=var1)
+r3.place(x=500,y=100)
+r1.select()
+r4=Radiobutton(f2,text='c++',value='c++',variable=var2)
+r4.place(x=300,y=150)
+r5=Radiobutton(f2,text='java',value='java',variable=var2)
+r5.place(x=400,y=150)
+r6=Radiobutton(f2,text='python',value='python',variable=var2)
+r6.place(x=500,y=150)
+r4.select()
+
+
+b1=Button(f1,text='submit',font=('arial',20,'bold'))
+b1.place(x=300,y=100)
+top.mainloop()
